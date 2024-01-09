@@ -1,16 +1,30 @@
 const Home = () => {
   return (
     <div>
-      {/* <h1 className="text-3xl font-bold text-center">Weather Info</h1>
-    <div>
-      <h2>Location : Calgary</h2>
-      <h2>Current Temperature : 2°C</h2>
-      <h3>Today's Max: 5°C</h3>
-      <h3>Today's Min: 0°C</h3>
-    </div> */}
+      {/* const axios = require('axios');
+      const options = {
+  method: 'GET',
+  url: 'https://weatherbit-v1-mashape.p.rapidapi.com/forecast/daily',
+  params: {
+    lat: '38.5',
+    lon: '-78.5'
+  },
+  headers: {
+    'X-RapidAPI-Key': '4c50da5040mshf75aa74f17a1faap1bb575jsn94ac27ca284b',
+    'X-RapidAPI-Host': 'weatherbit-v1-mashape.p.rapidapi.com'
+  }
+};
 
-      <div className="flex flex-col items-center justify-center h-screen bg-blue-200">
-        <h1 className="text-4xl font-bold text-blue-900 mb-6">Weather Info</h1>
+try {
+	const response = await axios.request(options);
+	console.log(response.data);
+} catch (error) {
+	console.error(error);
+} */}
+      <div className="flex flex-col items-center justify-center h-screen bg-black">
+        <h1 className="text-4xl font-bold text-yellow-200 mb-6">
+          Weather Info
+        </h1>
         <div className="bg-white rounded-lg shadow-lg p-6 max-w-sm">
           <h2 className="text-2xl font-semibold text-gray-800">
             Location: Calgary
