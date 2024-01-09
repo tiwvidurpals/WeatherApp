@@ -1,27 +1,11 @@
+import useWeatherForecast from "../../../hooks/useWeatherForecast";
+
 const Home = () => {
+  const weatherApiResult = useWeatherForecast();
   return (
     <div>
-      {/* const axios = require('axios');
-      const options = {
-  method: 'GET',
-  url: 'https://weatherbit-v1-mashape.p.rapidapi.com/forecast/daily',
-  params: {
-    lat: '38.5',
-    lon: '-78.5'
-  },
-  headers: {
-    'X-RapidAPI-Key': '4c50da5040mshf75aa74f17a1faap1bb575jsn94ac27ca284b',
-    'X-RapidAPI-Host': 'weatherbit-v1-mashape.p.rapidapi.com'
-  }
-};
-
-try {
-	const response = await axios.request(options);
-	console.log(response.data);
-} catch (error) {
-	console.error(error);
-} */}
-      <div className="flex flex-col items-center justify-center h-screen bg-black">
+      <div>{weatherApiResult}</div>
+      <div className="flex flex-col items-center justify-center h-screen bg-blue-300">
         <h1 className="text-4xl font-bold text-yellow-200 mb-6">
           Weather Info
         </h1>
