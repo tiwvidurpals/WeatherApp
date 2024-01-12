@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 const weatherApi = axios.create({
   baseURL: "https://weatherbit-v1-mashape.p.rapidapi.com",
   params: {
-    lat: "38.5",
-    lon: "-78.5",
+    lat: "51.0447",
+    lon: "-114.0719",
   },
   headers: {
     "X-RapidAPI-Key": "4c50da5040mshf75aa74f17a1faap1bb575jsn94ac27ca284b",
@@ -34,7 +34,7 @@ const useWeatherForecast = () => {
     getWeather();
   }, [currentPage]);
   console.log(weather);
-  return <div>Text for the custom Hook!</div>;
+  return { weather, isLoading, error };
 };
 
 export default useWeatherForecast;

@@ -1,10 +1,9 @@
 import useWeatherForecast from "../../../hooks/useWeatherForecast";
 
 const Home = () => {
-  const weatherApiResult = useWeatherForecast();
+  const { weather, isLoading, error } = useWeatherForecast();
   return (
     <div>
-      <div>{weatherApiResult}</div>
       <div className="flex flex-col items-center justify-center h-screen bg-blue-300">
         <h1 className="text-4xl font-bold text-yellow-200 mb-6">
           Weather Info
