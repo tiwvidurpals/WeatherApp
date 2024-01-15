@@ -33,7 +33,7 @@ const useWeatherForecast = () => {
     }
     getWeather();
   }, [currentPage]);
-  console.log(weather);
+  // console.log(weather);
   return { weather, isLoading, error };
 };
 
