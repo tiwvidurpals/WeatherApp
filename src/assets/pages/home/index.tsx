@@ -2,7 +2,7 @@ import useWeatherForecast from "../../../hooks/useWeatherForecast";
 
 const Home = () => {
   const { weather, isLoading, error } = useWeatherForecast();
-  console.log(weather?.city_name);
+  console.log(weather);
   return (
     <div>
       <div className="flex flex-col items-center justify-center h-screen bg-blue-300">
@@ -11,25 +11,27 @@ const Home = () => {
         </h1>
         <div className="bg-white rounded-lg shadow-lg p-6 max-w-sm">
           <h2 className="text-2xl font-semibold text-gray-800">
-            Location: {weather && <>{weather?.city_name}</>}
+            Location: {weather && <>{weather?.location.name}</>}
           </h2>
           <div className="mt-4">
             <h2 className="text-xl text-gray-700">
               Current Temperature:{" "}
               <span className="font-semibold">
-                {weather && <>{weather?.data[0]?.app_max_temp}</>}
+                {weather && <>{weather?.current.temp_c}</>}
               </span>
             </h2>
             <h3 className="text-lg text-gray-600 mt-2">
-              Today's Max:
+              Today's Max:{" "}
               <span className="font-medium">
-                {weather && <>{weather.data[0]?.high_temp}</>}
+                {weather && (
+                  <>{weather.forecast.forecastday[0].day.maxtemp_c}</>
+                )}
               </span>
             </h3>
             <h3 className="text-lg text-gray-600">
-              Today's Min:
+              Today's Min:{" "}
               <span className="font-medium">
-                {weather && <>{weather.data[0]?.low_temp}</>}
+                <>{weather.forecast.forecastday[0].day.mintemp_c}</>
               </span>
             </h3>
           </div>

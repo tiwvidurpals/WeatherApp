@@ -2,14 +2,12 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 const weatherApi = axios.create({
-  baseURL: "https://weatherbit-v1-mashape.p.rapidapi.com",
+  baseURL: "http://api.weatherapi.com/v1",
   params: {
-    lat: "51.0447",
-    lon: "-114.0719",
-  },
-  headers: {
-    "X-RapidAPI-Key": "4c50da5040mshf75aa74f17a1faap1bb575jsn94ac27ca284b",
-    "X-RapidAPI-Host": "weatherbit-v1-mashape.p.rapidapi.com",
+    Key: "5d56bd2dae224a7581552817241601",
+    q: "51.0447, -114.0719",
+    days: "3",
+    // dt: "2024-01-16",
   },
 });
 
@@ -17,7 +15,7 @@ const useWeatherForecast = () => {
   const [weather, setWeather] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState();
-  const [currentPage, setCurrentPage] = useState("/forecast/daily");
+  const [currentPage, setCurrentPage] = useState("/forecast.json");
 
   useEffect(() => {
     async function getWeather() {
