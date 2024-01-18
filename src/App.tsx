@@ -1,15 +1,13 @@
-import { useEffect } from "react";
 import { Home } from "./assets/pages/home";
+import Navbar from "./components/Navbar";
 
 function App() {
-  useEffect(() => {}, []);
   return (
     <>
+      <Navbar />
       <Home />
     </>
   );
 }
 
 export default App;
-
-//make it for more than 14 days

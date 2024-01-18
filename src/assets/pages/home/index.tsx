@@ -20,18 +20,26 @@ const Home = () => {
                 {weather && <>{weather?.current.temp_c}</>}
               </span>
             </h2>
+            <h2 className="text-xl text-gray-700">
+              Feels like Temperature:{" "}
+              <span className="font-semibold">
+                {weather && <>{weather?.current.feelslike_c}</>}
+              </span>
+            </h2>
             <h3 className="text-lg text-gray-600 mt-2">
               Today's Max:{" "}
               <span className="font-medium">
                 {weather && (
-                  <>{weather.forecast.forecastday[0].day.maxtemp_c}</>
+                  <>{weather.forecast?.forecastday[0].day.maxtemp_c}</>
                 )}
               </span>
             </h3>
             <h3 className="text-lg text-gray-600">
               Today's Min:{" "}
               <span className="font-medium">
-                <>{weather.forecast.forecastday[0].day.mintemp_c}</>
+                {weather && (
+                  <>{weather.forecast?.forecastday[0].day.mintemp_c}</>
+                )}
               </span>
             </h3>
           </div>

@@ -7,7 +7,6 @@ const weatherApi = axios.create({
     Key: "5d56bd2dae224a7581552817241601",
     q: "51.0447, -114.0719",
     days: "3",
-    // dt: "2024-01-16",
   },
 });
 
