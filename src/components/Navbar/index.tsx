@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <div>
       <button>Today</button> <button>Tomorrow</button>{" "}
-      <button>Day after Tomorrow</button>
+      <button>Tomorrow</button>
     </div>
   );
 };
