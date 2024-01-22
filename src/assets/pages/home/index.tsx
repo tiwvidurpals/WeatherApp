@@ -1,11 +1,15 @@
 import useWeatherForecast from "../../../hooks/useWeatherForecast";
+import weatherImage from "../../images/weatherImage.jpg";
 
 const Home = () => {
   const { weather, isLoading, error } = useWeatherForecast();
   console.log(weather);
   return (
-    <div>
-      <div className="flex flex-col items-center justify-center h-screen bg-blue-300">
+    <div
+      style={{ backgroundImage: `url(${weatherImage})` }}
+      className="bg-no-repeat bg-cover bg-center h-screen"
+    >
+      <div className="flex flex-col items-center justify-center content-around bg-opacity-50 bg-black py-48">
         <h1 className="text-4xl font-bold text-yellow-200 mb-6">
           Weather Info
         </h1>
