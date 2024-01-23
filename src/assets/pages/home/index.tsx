@@ -1,5 +1,6 @@
 import useWeatherForecast from "../../../hooks/useWeatherForecast";
 import weatherImage from "../../images/weatherImage.jpg";
+import currentWeather from "./index";
 
 const Home = () => {
   const { weather, isLoading, error } = useWeatherForecast();
@@ -21,7 +22,7 @@ const Home = () => {
             <h2 className="text-xl text-gray-700">
               Current Temperature:{" "}
               <span className="font-semibold">
-                {weather && <>{weather?.current.temp_c}</>}
+                {weather && <>{currentWeather.currentTemperature}</>}
               </span>
             </h2>
             <h2 className="text-xl text-gray-700">
