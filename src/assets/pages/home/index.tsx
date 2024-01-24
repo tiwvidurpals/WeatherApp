@@ -1,10 +1,33 @@
+import { useContext, useEffect, useState } from "react";
 import useWeatherForecast from "../../../hooks/useWeatherForecast";
 import weatherImage from "../../images/weatherImage.jpg";
-import currentWeather from "./index";
+import { WeatherContext } from "../../../utils/weatherContext";
 
 const Home = () => {
-  const { weather, isLoading, error } = useWeatherForecast();
-  console.log(weather);
+  const { weather } = useWeatherForecast();
+  const { day } = useContext(WeatherContext);
+  const [dayWeather, setDayWeather] = useState<any>();
+
+  console.log(weather, day);
+
+  console.log(dayWeather);
+
+  function getDayindex(day: any) {
+    if (day === "today") {
+      return 0;
+    }
+    if (day === "tommorrow") {
+      return 1;
+    }
+    return 0;
+  }
+
+  useEffect(() => {
+    if (weather) {
+      setDayWeather(weather.forecast.forecastday[getDayindex(day)].day);
+    }
+  }, [day, weather]);
+
   return (
     <div
       style={{ backgroundImage: `url(${weatherImage})` }}
@@ -22,7 +45,7 @@ const Home = () => {
             <h2 className="text-xl text-gray-700">
               Current Temperature:{" "}
               <span className="font-semibold">
-                {weather && <>{currentWeather.currentTemperature}</>}
+                {weather && <>{weather?.current.temp_c}</>}
               </span>
             </h2>
             <h2 className="text-xl text-gray-700">
@@ -32,19 +55,16 @@ const Home = () => {
               </span>
             </h2>
             <h3 className="text-lg text-gray-600 mt-2">
-              Today's Max:{" "}
+              Max:{" "}
               <span className="font-medium">
-                {weather && (
-                  <>{weather.forecast?.forecastday[0].day.maxtemp_c}</>
-                )}
+                {weather && <>{dayWeather?.maxtemp_c}</>}
               </span>
             </h3>
+
             <h3 className="text-lg text-gray-600">
-              Today's Min:{" "}
+              Min:{" "}
               <span className="font-medium">
-                {weather && (
-                  <>{weather.forecast?.forecastday[0].day.mintemp_c}</>
-                )}
+                {weather && <>{dayWeather?.mintemp_c}</>}
               </span>
             </h3>
           </div>
