@@ -19,6 +19,9 @@ const Home = () => {
     if (day === "tommorrow") {
       return 1;
     }
+    if (day === "dayAfterTommorrow") {
+      return 2;
+    }
     return 0;
   }
 

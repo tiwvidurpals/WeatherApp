@@ -19,6 +19,12 @@ const Navbar = () => {
       >
         Tomorrow
       </button>
+      <button
+        className="text-center text-lg text-yellow-200 h-10 w-64 bg-slate-400 rounded-md shadow-md hover:bg-slate-500 m-2"
+        onClick={() => setDay("dayAfterTommorrow")}
+      >
+        Day After Tomorrow
+      </button>
     </div>
   );
 };
