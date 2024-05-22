@@ -11,6 +11,7 @@ const Home = () => {
   console.log(weather, day);
 
   // console.log(dayWeather);
+  //
 
   function getDayindex(day: any) {
     if (day === "today") {
@@ -24,7 +25,7 @@ const Home = () => {
     }
     return 0;
   }
-  
+
   useEffect(() => {
     if (weather) {
       setDayWeather(weather.forecast.forecastday[getDayindex(day)].day);
