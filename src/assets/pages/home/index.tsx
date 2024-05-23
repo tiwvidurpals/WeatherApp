@@ -11,7 +11,6 @@ const Home = () => {
   console.log(weather, day);
 
   // console.log(dayWeather);
-  //
 
   function getDayindex(day: any) {
     if (day === "today") {
