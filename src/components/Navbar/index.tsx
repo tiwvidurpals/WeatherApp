@@ -11,7 +11,7 @@ const Navbar = () => {
   useEffect(()=>{
     if (weather){
       console.log(weather);
-      const dateDayAfterTomorrow = Date(weather.forecast.forecastday)
+      const dateDayAfterTomorrow = Date(weather.forecast.forecastday[2].date)
       console.log(dateDayAfterTomorrow)
     }
   })
