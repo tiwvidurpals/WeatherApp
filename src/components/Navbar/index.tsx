@@ -1,9 +1,20 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import useWeatherForecast from "../../hooks/useWeatherForecast";
 import { WeatherContext } from "../../utils/weatherContext";
 
 const Navbar = () => {
   const { setDay } = useContext(WeatherContext);
+  const { weather } = useWeatherForecast();
+
+  
+
+  useEffect(()=>{
+    if (weather){
+      console.log(weather);
+      const dateDayAfterTomorrow = Date(weather.forecast.forecastday)
+      console.log(dateDayAfterTomorrow)
+    }
+  })
 
   return (
     <div className="flex flex-wrap justify-evenly bg-blue-400 p-1">

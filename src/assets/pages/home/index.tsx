@@ -8,7 +8,7 @@ const Home = () => {
   const { day } = useContext(WeatherContext);
   const [dayWeather, setDayWeather] = useState<any>();
 
-  console.log(weather, day);
+  // console.log(weather, day);
 
   // console.log(dayWeather);
 
