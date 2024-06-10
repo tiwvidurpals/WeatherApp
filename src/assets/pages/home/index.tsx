@@ -8,7 +8,7 @@ const Home = () => {
   const { day } = useContext(WeatherContext);
   const [dayWeather, setDayWeather] = useState<any>();
 
-  // console.log(weather, day);
+  console.log(weather, day);
 
   // console.log(dayWeather);
 
@@ -37,6 +37,7 @@ const Home = () => {
       className="bg-no-repeat bg-cover bg-center h-screen"
     >
       <div className="flex flex-col items-center justify-center content-around bg-opacity-50 bg-black py-48">
+        <div className="flex ">hey</div>
         <h1 className="text-4xl font-bold text-yellow-200 mb-6">
           Weather Info
         </h1>
