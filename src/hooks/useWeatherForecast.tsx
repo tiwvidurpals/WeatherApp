@@ -13,14 +13,7 @@ const getWeatherFromAPI = (coordinates) => {
   });
 };
 
-// Coordinates for different cities
-// q: "51.0447, -114.0719", // Calgary
-// q: "27.7172, 85.3240", // Kathmandu
-// q: "28.2096, 83.9856", // Pokhara
-// q: "27.9772, 83.7677", // Waling
-// q: "49.8954, -97.1385", // Winnipeg
-// q: "37.0165, -7.9352", // Faro
-// q: "32.8140, -96.9489", // Irving
+
 
 const useWeatherForecast = () => {
   const { coordinates } = useCityStore();

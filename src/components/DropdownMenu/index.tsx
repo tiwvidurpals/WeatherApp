@@ -7,16 +7,6 @@
 // q: "32.8140, -96.9489", // Irving
 
 
-// q: "51.0447, -114.0719", //Calgary
-//q: "27.7172, 85.3240", //Kathmandu
-//q: "28.2096, 83.9856", //Pokhara
-//q: "27.9772, 83.7677", // Waling
-//q: "49.8954, -97.1385", // Winnipeg
-// q: "37.0165, -7.9352", // Faro
-// q: "32.8140, -96.9489", // Irving
-
-
-
 import React from 'react';
 import useCityStore from '../../zustand/store';
 
@@ -56,11 +46,7 @@ const Dropdown: React.FC = () => {
           </option>
         ))}
       </select>
-      {selectedCity && (
-        <div className="mt-2 text-yellow-200 text-md">
-          You selected: <strong>{selectedCity}</strong>
-        </div>
-      )}
+      
     </div>
   );
 };
