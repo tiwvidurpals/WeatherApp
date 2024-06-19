@@ -2,12 +2,16 @@ import { useContext, useEffect, useState } from "react";
 import useWeatherForecast from "../../../hooks/useWeatherForecast";
 import weatherImage from "../../images/weatherImage.jpg";
 import { WeatherContext } from "../../../utils/weatherContext";
+
+
+
 import Dropdown from "../../../components/DropdownMenu";
 
 const Home = () => {
   const { weather } = useWeatherForecast();
   const { day } = useContext(WeatherContext);
   const [dayWeather, setDayWeather] = useState<any>();
+
 
   console.log(weather, day);
 
