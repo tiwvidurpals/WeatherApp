@@ -7,7 +7,7 @@ const cities = [
   'Calgary',
   'Winnipeg',
   'Faro',
-  'Texas',
+  'Irving',
 ];
 
 const Dropdown: React.FC = () => {
