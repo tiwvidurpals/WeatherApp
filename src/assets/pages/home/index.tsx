@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import useWeatherForecast from "../../../hooks/useWeatherForecast";
 import weatherImage from "../../images/weatherImage.jpg";
 import { WeatherContext } from "../../../utils/weatherContext";
+import Dropdown from "../../../components/DropdownMenu";
 
 const Home = () => {
   const { weather } = useWeatherForecast();
@@ -37,7 +38,7 @@ const Home = () => {
       className="bg-no-repeat bg-cover bg-center h-screen"
     >
       <div className="flex flex-col items-center justify-center content-around bg-opacity-50 bg-black py-48">
-        <div className="flex ">hey</div>
+        <div className="flex "> <Dropdown/></div>
         <h1 className="text-4xl font-bold text-yellow-200 mb-6">
           Weather Info
         </h1>
