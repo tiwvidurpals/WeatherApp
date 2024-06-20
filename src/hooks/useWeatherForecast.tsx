@@ -2,7 +2,10 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import useCityStore from '../zustand/store';
 
+
+
 const getWeatherFromAPI = (coordinates) => {
+  const coords = coordinates;
   return axios.create({
     baseURL: "http://api.weatherapi.com/v1",
     params: {

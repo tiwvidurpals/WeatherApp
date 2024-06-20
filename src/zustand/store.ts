@@ -18,7 +18,7 @@ const cityCoordinates: Record<string, string> = {
 
 const useCityStore = create<CityState>((set) => ({
   selectedCity: '',
-  coordinates: '',
+  coordinates: '27.9772, 83.7677',
   setCity: (city: string) => {
     set({
       selectedCity: city,
