@@ -4,8 +4,7 @@ import useCityStore from '../zustand/store';
 
 
 
-const getWeatherFromAPI = (coordinates) => {
-  const coords = coordinates;
+const getWeatherFromAPI = (coordinates: string) => {
   return axios.create({
     baseURL: "http://api.weatherapi.com/v1",
     params: {

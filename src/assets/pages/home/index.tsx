@@ -51,30 +51,36 @@ const Home = () => {
             Location: {weather && <>{weather?.location.name}</>}
           </h2>
           <div className="mt-4">
-            <h2 className="text-xl text-gray-700">
-              Current Temperature:{" "}
-              <span className="font-semibold">
-                {weather && <>{weather?.current.temp_c}</>}
-              </span>
-            </h2>
-            <h2 className="text-xl text-gray-700">
-              Feels like Temperature:{" "}
-              <span className="font-semibold">
-                {weather && <>{weather?.current.feelslike_c}</>}
-              </span>
-            </h2>
-            <h3 className="text-lg text-gray-600 mt-2">
-              Max:{" "}
+          {day === 'today' && (
+  <>
+    <h2 className="text-xl text-gray-700">
+      Current Temperature:{" "}
+      <span className="font-semibold">
+        {weather && weather.current.temp_c}
+      </span> °C
+    </h2>
+    <h2 className="text-xl text-gray-700">
+      Feels like Temperature:{" "}
+      <span className="font-semibold">
+        {weather && weather.current.feelslike_c}
+      </span> °C
+    </h2>
+  </>
+)}
+
+            
+            <h3 className="text-lg text-gray-600 mt-6">
+              Day's Maximum:{" "}
               <span className="font-medium">
                 {weather && <>{dayWeather?.maxtemp_c}</>}
-              </span>
+              </span> °C
             </h3>
 
             <h3 className="text-lg text-gray-600">
-              Min:{" "}
+              Day's Minimum:{" "}
               <span className="font-medium">
                 {weather && <>{dayWeather?.mintemp_c}</>}
-              </span>
+              </span> °C
             </h3>
           </div>
         </div>
