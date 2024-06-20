@@ -66,9 +66,7 @@ const Home = () => {
       </span> °C
     </h2>
   </>
-)}
-
-            
+)}       
             <h3 className="text-lg text-gray-600 mt-6">
               Day's Maximum:{" "}
               <span className="font-medium">
