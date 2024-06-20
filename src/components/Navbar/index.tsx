@@ -28,9 +28,9 @@ const Navbar = () => {
     return daysOfWeek[date.getUTCDay()];
   }
   
-  const dayAfterTomorrow = getDayOfWeek;
+  // const dayAfterTomorrow = getDayOfWeek;
   
-  const dayOfWeek = dateAfterTomorrow ? dayAfterTomorrow(dateAfterTomorrow) : '';
+  const dayOfWeek = dateAfterTomorrow ? getDayOfWeek(dateAfterTomorrow) : '';
   console.log(dayOfWeek); // This will log the day of the week for the date after tomorrow
   
 
