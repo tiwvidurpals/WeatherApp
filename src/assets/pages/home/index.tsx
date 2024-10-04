@@ -3,15 +3,12 @@ import useWeatherForecast from "../../../hooks/useWeatherForecast";
 import weatherImage from "../../images/weatherImage.jpg";
 import { WeatherContext } from "../../../utils/weatherContext";
 
-
-
 import Dropdown from "../../../components/DropdownMenu";
 
 const Home = () => {
   const { weather } = useWeatherForecast();
   const { day } = useContext(WeatherContext);
   const [dayWeather, setDayWeather] = useState<any>();
-
 
   console.log(weather, day);
 
@@ -42,7 +39,10 @@ const Home = () => {
       className="bg-no-repeat bg-cover bg-center h-screen"
     >
       <div className="flex flex-col items-center justify-center content-around bg-opacity-50 bg-black py-48">
-        <div className="flex "> <Dropdown/></div>
+        <div className="flex ">
+          {" "}
+          <Dropdown />
+        </div>
         <h1 className="text-4xl font-bold text-yellow-200 mb-6">
           Weather Info
         </h1>
@@ -51,34 +51,38 @@ const Home = () => {
             Location: {weather && <>{weather?.location.name}</>}
           </h2>
           <div className="mt-4">
-          {day === 'today' && (
-  <>
-    <h2 className="text-xl text-gray-700">
-      Current Temperature:{" "}
-      <span className="font-semibold">
-        {weather && weather.current.temp_c}
-      </span> °C
-    </h2>
-    <h2 className="text-xl text-gray-700">
-      Feels like Temperature:{" "}
-      <span className="font-semibold">
-        {weather && weather.current.feelslike_c}
-      </span> °C
-    </h2>
-  </>
-)}       
+            {day === "today" && (
+              <>
+                <h2 className="text-xl text-gray-700">
+                  Current Temperature:{" "}
+                  <span className="font-semibold">
+                    {weather && weather.current.temp_c}
+                  </span>{" "}
+                  °C
+                </h2>
+                <h2 className="text-xl text-gray-700">
+                  Feels like Temperature:{" "}
+                  <span className="font-semibold">
+                    {weather && weather.current.feelslike_c}
+                  </span>{" "}
+                  °C
+                </h2>
+              </>
+            )}
             <h3 className="text-lg text-gray-600 mt-6">
               Day's Maximum:{" "}
               <span className="font-medium">
                 {weather && <>{dayWeather?.maxtemp_c}</>}
-              </span> °C
+              </span>{" "}
+              °C
             </h3>
 
             <h3 className="text-lg text-gray-600">
               Day's Minimum:{" "}
               <span className="font-medium">
                 {weather && <>{dayWeather?.mintemp_c}</>}
-              </span> °C
+              </span>{" "}
+              °C
             </h3>
           </div>
         </div>
